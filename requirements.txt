@@ -1,2 +1,2 @@
-pyserial==3.5
 requests==2.32.0
+sry_gnm_sy1xx_bl
