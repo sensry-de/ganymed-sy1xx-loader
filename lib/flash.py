@@ -39,10 +39,17 @@ class Flash:
             self.log(f"failed to connect to {port}")
             self.connected = False
 
-    def write_mram(self, values):
+    def write_mram(self, core_guard_bin, application_gnm):
         if not self.connected:
             self.log("not connected")
             return
+
+        values = {
+            "kernel_file": core_guard_bin,
+            "ota_app_file": application_gnm,
+            "toc_file": "",
+            "user_file": "",
+        }
 
         kernel_filename = values["kernel_file"]
 
